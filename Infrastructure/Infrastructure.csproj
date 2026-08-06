@@ -10,4 +10,11 @@
     <PackageReference Include="Microsoft.OpenApi" Version="3.9.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Identity\" />
+    <Folder Include="UnitOfWork\" />
+    <Folder Include="Repos\" />
+  </ItemGroup>
+
 </Project>
