@@ -1,16 +1,22 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.Entities
 {
-    public class Branch : TenantScopedEntity
+    public class Branch
     {
+        public Guid Id { get; set; }
+        public Guid TenantId { get; set; }
+
+        public Guid CenterId { get; set; }
+        public MaintenanceCenter Center { get; set; }
+
         public string Name { get; set; }
         public string Address { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        public string PhoneNumber { get; set; }
-        public bool IsActive { get; set; } = true;
+
+        public ICollection<ServiceCatalog> Services { get; set; }
+        public ICollection<Booking> Bookings { get; set; }
     }
 }

@@ -1,20 +1,17 @@
-﻿using Domain.Enums;
+using Domain.Enums;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.Entities
 {
-    public class RepairOrder : TenantScopedEntity
+    public class RepairOrder
     {
-        public Guid BookingId { get; set; } // unique, required
+        public Guid Id { get; set; }
+        public Guid TenantId { get; set; }
+
+        public Guid BookingId { get; set; }
         public Booking Booking { get; set; }
 
-        public Guid? AssignedMechanicId { get; set; } // nullable until assigned
-        public Employee AssignedMechanic { get; set; }
-
         public RepairOrderStatus Status { get; set; }
-        public DateTime OpenedAt { get; set; }
-        public DateTime? ClosedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

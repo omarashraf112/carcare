@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System;
 
 namespace Domain.Entities
 {
-    public class Inspection : TenantScopedEntity
+    public class Inspection
     {
+        public Guid Id { get; set; }
+
         public Guid RepairOrderId { get; set; }
         public RepairOrder RepairOrder { get; set; }
 
-        public Guid MechanicId { get; set; }
-        public Employee Mechanic { get; set; }
-
-        public string Notes { get; set; }
-        public List<string> MediaUrls { get; set; } // JSON list, optional photos/videos
+        public string Findings { get; set; }
+        public string Diagnosis { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

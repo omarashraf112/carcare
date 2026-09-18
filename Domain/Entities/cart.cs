@@ -1,10 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.Entities
 {
-    internal class cart
+    public class Cart
     {
+        public Guid Id { get; set; }
+
+        public Guid CustomerId { get; set; }
+        public User Customer { get; set; }
+
+        public ICollection<CartItem> Items { get; set; }
     }
 }

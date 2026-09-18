@@ -1,18 +1,17 @@
-﻿using Domain.Enums;
+using Domain.Enums;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.Entities
 {
-    public class Payment : TenantScopedEntity
+    public class Payment
     {
-        public Guid InvoiceId { get; set; }
-        public Invoice Invoice { get; set; }
+        public Guid Id { get; set; }
 
-        public decimal Amount { get; set; }
-        public PaymentMethod Method { get; set; }
-        public string TransactionRef { get; set; } // optional, e.g. Paymob reference
-        public DateTime PaidAt { get; set; }
+        public Guid OrderId { get; set; }
+        public Order Order { get; set; }
+
+        public PaymentStatus Status { get; set; }
+        public string PaymobTxnId { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

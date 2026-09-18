@@ -1,20 +1,20 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.Entities
 {
-    public class Vehicle : AuditableEntity
+    public class Vehicle
     {
-        public Guid CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public Guid Id { get; set; }
 
+        public Guid CustomerId { get; set; }
+        public User Customer { get; set; }
+
+        public string PlateNumber { get; set; }
+        public string ChassisNumber { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
-        public int Year { get; set; }
-        public string PlateNumber { get; set; } // unique, indexed
-        public string VIN { get; set; }         // optional, unique
-        public int Mileage { get; set; }
-        public string Color { get; set; }
+
+        public ICollection<VehicleHistoryEntry> History { get; set; }
     }
 }

@@ -1,18 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System;
 
 namespace Domain.Entities
 {
-    public class Review : TenantScopedEntity
+    // Nullable-FK approach — exactly one of CenterId / ShopId should be set
+    public class Review
     {
+        public Guid Id { get; set; }
+
         public Guid CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public User Customer { get; set; }
 
-        public Guid RepairOrderId { get; set; } // unique, required
-        public RepairOrder RepairOrder { get; set; }
+        public Guid? CenterId { get; set; }
+        public MaintenanceCenter Center { get; set; }
 
-        public int Rating { get; set; } // 1-5
+        public Guid? ShopId { get; set; }
+        public PartsShop Shop { get; set; }
+
+        public int Rating { get; set; }
         public string Comment { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

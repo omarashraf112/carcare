@@ -1,7 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Domain.Enums
 {
     public enum NotificationType
@@ -9,6 +5,6 @@ namespace Domain.Enums
         BookingUpdate,
         PreApprovalRequest,
         TowStatusUpdate,
-        ComplaintStatusUpdate
+        ComplaintResponse
     }
 }

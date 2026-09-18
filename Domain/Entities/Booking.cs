@@ -1,17 +1,18 @@
-﻿using Domain.Enums;
+using Domain.Enums;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.Entities
 {
-    public class Booking : TenantScopedEntity
+    public class Booking
     {
+        public Guid Id { get; set; }
+        public Guid TenantId { get; set; }
+
         public Guid BranchId { get; set; }
         public Branch Branch { get; set; }
 
         public Guid CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public User Customer { get; set; }
 
         public Guid VehicleId { get; set; }
         public Vehicle Vehicle { get; set; }
@@ -22,5 +23,6 @@ namespace Domain.Entities
         public DateTime ScheduledAt { get; set; } // indexed with TenantId + BranchId
         public string Notes { get; set; }
         public BookingStatus Status { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }
