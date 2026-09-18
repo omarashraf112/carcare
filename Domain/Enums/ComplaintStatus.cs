@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Domain.Enums
 {
-    public enum EmployeeRole
+    public enum ComplaintStatus
     {
-        Owner,
-        Manager,
-        Mechanic,
-        Receptionist
+        Open,
+        UnderReview,
+        Resolved,
+        Rejected
     }
 }

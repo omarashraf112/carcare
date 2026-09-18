@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Domain.Enums
 {
-    public enum InvoiceStatus
+     public enum ReferenceType
     {
-        Unpaid,
-        PartiallyPaid,
-        Paid
+        Booking,
+        Order
     }
 }
